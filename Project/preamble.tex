@@ -1,0 +1,124 @@
+% Common preamble I use
+\usepackage[utf8]{inputenc}         % Input encoding
+\usepackage[T1]{fontenc}            % Font encoding
+\usepackage{textcomp}               % Provides various additional symbols and text-related features
+\usepackage{microtype}              % Improves micro-typography of the document
+\usepackage{pifont}                 % Provides additional symbols, including dingbats
+\usepackage{changepage}             % Allows adjustment of page layout parameters
+\usepackage{ftnxtra}
+\usepackage{fancyhdr}
+
+\usepackage{chemgreek,textgreek}    % Greek letters 
+
+\usepackage{authblk}                % For customizing author block layout in the title page
+
+\usepackage{listings}               % Code listings
+\usepackage{xcolor}                 % Color support
+
+\usepackage{graphicx}               % Graphics support
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{tikz}                   % For in-doc drawings
+\usepackage{subcaption}             % Enhanced support for sub-figures and sub-captions
+\usepackage{amsmath}                % Math support
+%\usepackage{mathenv}                % Provides additional math environments
+\usepackage{amssymb}                % Provides various additional mathematical symbols
+\usepackage{amsthm}                 % Provides enhanced support for theorem-like environments
+\usepackage{wrapfig}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+
+
+\usepackage{xtab}                   % Tables with adjustable width 
+\usepackage{multirow}               % For multi-row cells in tables
+\usepackage{array}                  % Provides more flexible and customizable array and tabular environments
+\usepackage{longtable}              % Allows tables that span multiple pages
+\usepackage{threeparttablex}
+\usepackage{tabularray}
+
+\usepackage{booktabs}               % Enhanced tables
+\usepackage{csquotes}               % Quotation marks
+\usepackage{algorithm}
+\usepackage{siunitx}
+\sisetup{
+  input-ignore={,},
+  input-decimal-markers={.},
+  group-separator={,},
+  table-align-text-pre=false,
+  table-align-text-post=true
+}
+%\usepackage{algorithmic}            % For typesetting algorithms
+\usepackage{algpseudocode}
+\usepackage{caption}                % Customizes captions in floating environments
+\usepackage{subcaption}
+\usepackage{setspace}
+\DeclareMathOperator{\atan}{atan}
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=bf,format=plain,justification=justified, singlelinecheck=false,labelsep=newline,skip=0pt}
+\DeclareCaptionLabelFormat{apafigure}{\textbf{Figure #2}}
+\DeclareCaptionLabelFormat{procedure}{\textbf{Procedure #2}}
+\DeclareCaptionLabelFormat{apalisting}{\textbf{Listing #2}}
+\captionsetup[figure]{labelformat=apafigure, labelsep=newline, justification=justified, singlelinecheck=false}
+
+
+\usepackage{ragged2e}               % Enhanced text alignment commands
+
+\usepackage{enumitem}               % Customizable lists     
+
+\usepackage[sort&compress]{natbib}  % Cite style
+\setcitestyle{numbers,square,comma}
+
+\usepackage{times}                  % Times font       
+
+\usepackage{hyperref}               % Hyperlinks
+\usepackage{url}                    % For typesetting URLs with line breaks at hyphens
+\def\UrlBreaks{\do\/\do-}
+\hypersetup{breaklinks=true}
+\urlstyle{same}
+\DeclareUrlCommand\email{}          % Email command
+\usepackage{nameref}                % Enables referencing section names instead of numbers
+
+% For using TODO notes
+% \todo[inline,caption={}]{TODOs are to be inserted like this}
+% \usepackage[color=blue!10,textsize=footnotesize,textwidth=25mm]{todonotes}
+\usepackage[disable]{todonotes}
+\usepackage{float}
+
+
+\makeatletter
+% Commands to format a counter value as Greek letter to be used like 
+% \arabic or \roman:
+\newcommand*\alphgreek[1]{\expandafter\@alphgreek\csname c@#1\endcsname}
+\newcommand*\@alphgreek[1]{\csname chemgreekIntToGreek:n\endcsname{#1}}
+\newcommand*\Alphgreek[1]{\expandafter\@Alphgreek\csname c@#1\endcsname}
+\newcommand*\@Alphgreek[1]{\csname chemgreekIntToGreek:n\endcsname{#1}}
+
+% Register new counter formats to enumitem:
+\AddEnumerateCounter*{\alphgreek}{\@alphgreek}{\chemalpha}
+\AddEnumerateCounter*{\Alphgreek}{\@Alphgreek}{\chemAlpha}
+\makeatother
+
+% \code{} command to insert in-text code snippets
+\definecolor{light-gray}{gray}{0.95}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+
+% AUTHOR
+\newcommand{\authorname}{Samuel Jonsson}
+\newcommand{\authormail}{\href{mailto:sajs19@student.bth.se}{sajs19@student.bth.se}}
+\newcommand{\authorpersonnr}{19990415-5596}
+\newcommand{\program}{DVAMI19h}
+
+
+% REPORT METADATA
+\newcommand{\doctitle}{Title}
+\newcommand{\docdate}{Latest version: \today}
+
+\pagestyle{fancy}     % Use the fancy page style
+\fancyhf{}            % Clear all headers and footers
+
+% HEADER CUSTOMISATION
+\fancyhead[L]{\textit{\doctitle}}
+\fancyhead[R]{\textit{\docdate}}
+
+% FOOTER CUSTOMISATION
+\fancyfoot[L]{\authorname~--~\program} % Left side: author name and program
+\fancyfoot[R]{Page \thepage}
