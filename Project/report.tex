@@ -3,14 +3,14 @@
 \input{preamble}
 
 \setlist{topsep=1ex,itemsep=0.5ex,parsep=0pt,partopsep=0pt}
-\newcommand{\theCourse}{MS2505: Bayesian Statistics}
 
 \begin{document}
 
 \vspace*{3cm}
 
 \begin{center}
-    \Huge\textbf{\doctitle}
+    \Huge\textbf{\doctitle}\\
+    \Large\textbf{\docsubtitle}
     \\\vspace*{5mm} 
     \large\today                            
 \end{center} 
@@ -38,10 +38,25 @@
 
 \section{Introduction}
 
-\section{Setup}
+\subsection{Setup}
+\todo[inline,caption={}]{
+    \begin{itemize}
+        \item Choose and describe the modeling approach (e.g., non-hierarchical or hierarchical model).
+        \item Justify your prior choice.
+        \item Perform posterior predictive checks.
+    \end{itemize}
+}
+
+\subsection{Data Selection}
+\todo[inline,caption={}]{Describe the data and the analysis problem.}
 
 \section{Results}
+\todo[inline,caption={}]{Include diagnostics to assess model convergence and adequacy.}
 
 \section{Discussion}
+\todo[inline,caption={}]{Discuss results, problems encountered, and possible improvements.}
 
+\appendix
+\section{R Code}
+\lstinputlisting[language=R,style=Rstyle,caption=Project R code,label=apx:RCode,]{./project_code.r}
 \end{document}
