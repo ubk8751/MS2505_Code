@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from datetime import datetime
 from sklearn.feature_extraction.text import CountVectorizer
 from itertools import product
 
@@ -86,7 +85,7 @@ class VectorDictionary:
 
         if self._verbose:
             print("Optimization completed.")
-            print("Best Parameters:", best_params)
+            print("Best Parameters: ", best_params)
 
         return best_params
 

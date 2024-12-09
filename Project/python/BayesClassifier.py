@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
+from scipy.stats import beta
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import accuracy_score, classification_report
-
 
 class BayesClassifier:
     def __init__(self,
@@ -175,3 +175,109 @@ class BayesClassifier:
     @property
     def word_probs(self):
         return self._word_probs
+
+class BayesBinomBetaClassifier():
+    def __init__(self,
+                 alpha: int = 1.0,
+                 beta_prior: int = 1.0,
+                 random_seed:int = None,
+                 verbose: int = 0):
+        """
+        Initialize the Bayesian classifier.
+
+        :param int alpha: Alpha parameter for the Beta prior.
+        :param int beta_prior: Beta parameter for the Beta prior.
+        :param int verbose: Verbosity toggle.
+        """
+        self._alpha_prior = alpha
+        self._beta_prior = beta_prior
+        self._verbose = verbose
+        self._random_seed = random_seed
+        self._posterior_params = {}
+
+    def fit(self, y: np.array):
+        """
+        Fit the Bayesian model using a Beta prior and binomial likelihood.
+
+        :param np.array y: Array of binary outcomes (0s and 1s).
+        """
+        # Total successes and trials
+        n_success = np.sum(y)
+        n_trials = len(y)
+
+        # Update posterior parameters
+        self._posterior_params['alpha'] = self._alpha_prior + n_success
+        self._posterior_params['beta'] = self._beta_prior + (n_trials - n_success)
+
+    def predict(self, n_trials: int):
+        """
+        Predict using the posterior distribution.
+
+        :param int n_trials: Number of trials for prediction.
+        :return float: Expected number of successes.
+        """
+        # Posterior mean
+        p_mean = self._posterior_params['alpha'] / (
+            self._posterior_params['alpha'] + self._posterior_params['beta']
+        )
+        if self._verbose:
+            print(f"Posterior Mean (Expected p): {p_mean}")
+        
+        # Expected number of successes
+        return p_mean * n_trials
+
+    def sample_posterior(self, size: int = 1000):
+        """
+        Sample from the posterior distribution of p.
+
+        :param size: Number of samples to generate.
+        :return: Array of sampled p values.
+        """
+        return beta.rvs(self._posterior_params['alpha'],
+                        self._posterior_params['beta'],
+                        size=size,
+                        random_state=self._random_seed)
+
+    @property
+    def alpha_prior(self):
+        return self._alpha_prior
+
+    @alpha_prior.setter
+    def alpha_prior(self, alpha: int):
+        if not isinstance(alpha, (int, float)) or alpha <= 0:
+            raise ValueError("alpha_prior must be a positive number.")
+        self._alpha_prior = alpha
+
+    @property
+    def beta_prior(self):
+        return self._beta_prior
+
+    @beta_prior.setter
+    def beta_prior(self, beta: int):
+        if not isinstance(beta, (int, float)) or beta <= 0:
+            raise ValueError("beta_prior must be a positive number.")
+        self._beta_prior = beta
+
+    @property
+    def verbose(self):
+        return self._verbose
+
+    @verbose.setter
+    def verbose(self, state: int):
+        if not isinstance(state, int) or state not in (0, 1):
+            raise ValueError("verbose must be either 0 (off) or 1 (on).")
+        self._verbose = state
+
+    @property
+    def posterior_params(self):
+        return self._posterior_params
+
+    @posterior_params.setter
+    def posterior_params(self, params: dict[str, int]):
+        if not isinstance(params, dict):
+            raise TypeError("posterior_params must be a dictionary.")
+        if 'alpha' not in params or 'beta' not in params:
+            raise KeyError("posterior_params must contain 'alpha' and 'beta' keys.")
+        if not all(isinstance(value, (int, float)) and value > 0 for value in params.values()):
+            raise ValueError("posterior_params values must be positive numbers.")
+        self._posterior_params = params

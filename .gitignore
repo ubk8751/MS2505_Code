@@ -1,6 +1,10 @@
 Rplots.pdf
 exerciseTestCode.r
 Project/latex_build
+Project/logs
 *test*
 .vscode
 *__pycache__
+*output
+.RData
+.Rhistory
