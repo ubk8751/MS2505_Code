@@ -1,0 +1,188 @@
+% Common preamble I use
+\usepackage[utf8]{inputenc}         % Input encoding
+\usepackage[T1]{fontenc}            % Font encoding
+\usepackage{textcomp}               % Provides various additional symbols and text-related features
+\usepackage{microtype}              % Improves micro-typography of the document
+\usepackage{pifont}                 % Provides additional symbols, including dingbats
+\usepackage{changepage}             % Allows adjustment of page layout parameters
+\usepackage{ftnxtra}                % Allows for fancy footnotes
+\usepackage{fancyhdr}               % Allows for headers and footers
+\usepackage{subcaption}             % Enhanced support for sub-figures and sub-captions
+\usepackage{wrapfig}
+
+\usepackage{chemgreek,textgreek}    % Greek letters 
+
+\usepackage{authblk}                % For customizing author block layout in the title page
+
+% Listings setup
+\usepackage{listings}               % Code listings
+\usepackage{xcolor}                 % Color support
+% Define R language for listings
+\lstdefinelanguage{R}{
+    keywords={function,
+              if,
+              else,
+              repeat,
+              while,
+              for,
+              in,
+              next,
+              break,
+              TRUE,
+              FALSE,
+              NULL,
+              Inf,
+              NaN,
+              NA,
+              NA_integer_,
+              NA_real_,
+              NA_complex_,
+              NA_character_,
+              library,
+              require,
+              install.packages},
+    keywordstyle=\color{blue}\bfseries,
+    sensitive=true,
+    comment=[l]{\#},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{orange},
+    morestring=[b]",
+    morestring=[b]',
+    moredelim=[is][\color{purple}]{`}{`}
+}
+\lstdefinestyle{Rstyle}{
+    language=R,                
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}, 
+    stringstyle=\color{orange},
+    commentstyle=\color{green!50!black}, 
+    backgroundcolor=\color{gray!10},    
+    showstringspaces=false,    
+    numbers=left,              
+    numberstyle=\tiny,         
+    breaklines=true,           
+    frame=single,              
+}
+
+% Graphic packages
+\usepackage{graphicx}               % Graphics support
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{tikz}                   % For in-doc drawings
+\usepackage{pgfplots}
+
+% Maths packages
+\usepackage{amsmath}                % Math support
+\usepackage{amssymb}                % Provides various additional mathematical symbols
+\usepackage{amsthm}                 % Provides enhanced support for theorem-like environments
+
+% Table support packages
+\usepackage{xtab}                   % Tables with adjustable width 
+\usepackage{multirow}               % For multi-row cells in tables
+\usepackage{array}                  % Provides more flexible and customizable array and tabular environments
+\usepackage{longtable}              % Allows tables that span multiple pages
+\usepackage{threeparttablex}        % Helps avoid clashes between tables and footnotes
+\usepackage{tabularray}             % Combines features of longtable, array, multirow, etc.
+
+\usepackage{booktabs}               % Enhanced tables
+\usepackage{csquotes}               % Quotation marks and quote formatting
+\usepackage{siunitx}                % For typesetting numbers and units.
+\sisetup{                           % Centers numbers in tables by the decimal point.
+  input-ignore={,},
+  input-decimal-markers={.},
+  group-separator={,},
+  table-align-text-pre=false,
+  table-align-text-post=true
+  }
+
+\usepackage{algorithm}              % Allows insertion of algorithms as an object
+\usepackage{algpseudocode}          % Used to insert pseudocode  
+\usepackage{caption}                % Customizes captions in floating environments
+
+\usepackage{setspace}
+
+\usepackage{ragged2e}               % Enhanced text alignment commands
+
+\usepackage{enumitem}               % Customizable lists     
+
+\usepackage[sort&compress]{natbib}  % Cite style
+\setcitestyle{numbers,square,comma}
+
+\usepackage{times}                  % Times font       
+
+\usepackage{hyperref}               % Hyperlinks
+\usepackage{url}                    % For typesetting URLs with line breaks at hyphens
+\def\UrlBreaks{\do\/\do-}           % Allows urls to break lines
+\hypersetup{breaklinks=true}
+\urlstyle{same}
+\usepackage{nameref}                % Enables referencing section names instead of numbers
+
+% For using TODO notes
+% \todo[inline,caption={}]{TODOs are to be inserted like this}
+\usepackage[color=blue!10,textsize=footnotesize,textwidth=25mm]{todonotes}
+%\usepackage[disable]{todonotes}
+\usepackage{float}
+
+% CUSTOM LABELS
+\DeclareCaptionLabelFormat{apafigure}{\textbf{Figure #2}}
+\DeclareCaptionLabelFormat{procedure}{\textbf{Procedure #2}}
+\DeclareCaptionLabelFormat{apalisting}{\textbf{Listing #2}}
+
+% CUSTOM CAPTION FORMATS
+\captionsetup[figure]{labelformat=apafigure,
+                      labelsep=newline,
+                      justification=justified,
+                      singlelinecheck=false}
+\DeclareMathOperator{\atan}{atan}
+\captionsetup[lstlisting]{labelformat=apalisting,
+                          position=above,
+                          justification=raggedright,
+                          labelsep=newline,
+                          singlelinecheck=false,}
+\DeclareCaptionLabelSeparator*{spaced}{\\[2ex]}
+\captionsetup[table]{textfont=bf,
+                     format=plain,
+                     justification=justified,
+                     singlelinecheck=false,
+                     labelsep=newline,
+                     skip=0pt}
+
+
+
+\makeatletter
+% Commands to format a counter value as Greek letter to be used like 
+% \arabic or \roman when using enumerate:
+\newcommand*\alphgreek[1]{\expandafter\@alphgreek\csname c@#1\endcsname}
+\newcommand*\@alphgreek[1]{\csname chemgreekIntToGreek:n\endcsname{#1}}
+\newcommand*\Alphgreek[1]{\expandafter\@Alphgreek\csname c@#1\endcsname}
+\newcommand*\@Alphgreek[1]{\csname chemgreekIntToGreek:n\endcsname{#1}}
+
+% Register new counter formats to enumitem:
+\AddEnumerateCounter*{\alphgreek}{\@alphgreek}{\chemalpha}
+\AddEnumerateCounter*{\Alphgreek}{\@Alphgreek}{\chemAlpha}
+\makeatother
+
+% \code{} command to insert in-text code snippets
+\definecolor{light-gray}{gray}{0.95}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+
+% AUTHOR
+\newcommand{\authorname}{Samuel Jonsson}
+\newcommand{\authormail}{\href{mailto:sajs19@student.bth.se}{sajs19@student.bth.se}}
+\newcommand{\authorpersonnr}{19990415-5596}
+\newcommand{\program}{DVAMI19h}
+
+% REPORT METADATA
+\newcommand{\doctitle}{MS2505: Bayesian Statistics}
+\newcommand{\docsubtitle}{Course Project}
+\newcommand{\docdate}{Latest version: \today}
+
+\pagestyle{fancy}                                 % Use the fancy page style
+\fancyhf{}                                        % Clear all headers and footers
+
+% HEADER CUSTOMISATION
+\fancyhead[L]{\textit{\doctitle~--~\docsubtitle}} % Header float left
+\fancyhead[R]{\textit{\docdate}}                  % Header float right
+
+% FOOTER CUSTOMISATION
+\fancyfoot[L]{\authorname~--~\authormail}         % Footer float left
+\fancyfoot[R]{Page \thepage}                      % Footer float right
