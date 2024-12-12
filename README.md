@@ -12,6 +12,6 @@ The `ExerciseCompilation` folder contains a latex project with a compilation of 
 
 ### Argumens
 
-- `OUTPUT_FILE` (optional): Name of the output PDF file. Defaults to "combined_exercises.pdf".
+- `OUTPUT_FILE` (optional): Name of the output PDF file. Defaults to "output_pdf.pdf".
 - `LATEX_DIR` (optional): Path to the LaTeX build directory. Defaults to "latex_build".
 - `-h` (optional): Print options
