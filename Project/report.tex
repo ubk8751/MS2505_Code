@@ -1,0 +1,119 @@
+\documentclass[12pt,a4paper,twoside]{article}
+
+\input{preamble}
+
+\setlist{topsep=1ex,itemsep=0.5ex,parsep=0pt,partopsep=0pt}
+
+\begin{document}
+
+\vspace*{3cm}
+
+\begin{center}
+    \Huge\textbf{\doctitle}\\
+    \Large\textbf{\docsubtitle}
+    \\\vspace*{5mm} 
+    \large\today                            
+\end{center} 
+
+\vspace*{5mm}
+
+\begin{tabular}{|l|p{13cm}|}
+    \hline
+    \textbf{Name}           & \authorname     \\
+    \hline
+    \textbf{E-Mail}         & \authormail     \\
+    \hline
+    \textbf{Person Nr.}     & \authorpersonnr \\
+    \hline
+    \textbf{Program}        & \program        \\
+    \hline
+\end{tabular}
+
+\begin{figure}[!b]
+    \centering
+    \includegraphics[width = 0.25\textwidth]{../figures/BTH_logo_black.png}
+\end{figure}
+
+\newpage
+
+\section{Setup}
+\label{sec:setup}
+\todo[inline,caption={}]{
+    \begin{itemize}
+        \item Describe the data and the analysis problem.
+        \item Choose and describe the modeling approach (e.g., non-hierarchical or hierarchical model).
+        \item Justify your prior choice.
+        \item Perform posterior predictive checks.
+    \end{itemize}
+}
+\subsection{Analysis problem}
+\label{ssec:analysisproblem}
+
+\subsection{Data Selection}
+\label{ssec:dataselection}
+\todo[inline,caption={}]{Describe the data and the analysis problem.}
+
+The dataset selected is a datasets containing a list of emails, as well as a label marking each
+email as "spam" or "ham" (spam or not spam). The first 10 rows of the dataset looks as follows:
+
+\begin{longtable}[!ht]{p{1.5cm}|p{11cm}}
+    \caption{\code{mail\_data.csv} dataset first 10 rows}\\
+    \textbf{Category} & \textbf{Message} \\
+    \hline
+    ham      & "Go until jurong point, crazy.. Available only in bugis n great world la e buffet...
+               Cine there got amore wat..." \\
+    \hline
+    ham      & Ok lar... Joking wif u oni... \\
+    \hline
+    spam     & Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to
+               receive entry question(std txt rate)T\&C's apply 08452810075over18's \\
+    \hline
+    ham      & U dun say so early hor... U c already then say... \\
+    \hline
+    ham      & "Nah I don't think he goes to usf, he lives around here though" \\
+    \hline
+    spam     & "FreeMsg Hey there darling it's been 3 week's now and no word back! I'd like some fun you
+                up for it still? Tb ok! XxX std chgs to send, \pounds 1.50 to rcv" \\
+    \hline
+    ham      & Even my brother is not like to speak with me. They treat me like aids patent. \\
+    \hline
+    ham      & As per your request 'Melle Melle (Oru Minnaminunginte Nurungu Vettam)' has
+               been set as your callertune for all Callers. Press *9 to copy your friends Callertune \\
+    \hline
+    ...      & ... \\
+\end{longtable}
+
+Then, using a Python script, the labels were converted to 1 if it was "spam" and 0 if it was "ham",
+for easier analysis.
+
+\subsection{Model}
+\label{ssec:model}
+\todo[inline,caption={}]{
+    \begin{itemize}
+        \item Choose and describe the modeling approach (e.g., non-hierarchical or hierarchical model).
+        \item Justify your prior choice.
+    \end{itemize}
+}
+The model chosen was a binomial likelihood model with a beta prior. As the goal is to analyse the
+probability of an email being spam, the fallout will be binary (either it is spam or it is not). Hence,
+a binomial likelihood, where I want to find the parameter $\theta$ in a dataset of fixed size with a set
+number of "successes" and "fails" (spam and ham), is appropriate.
+
+Additionally, as I do not have any prior knowledge in regards to this distribution, a non-informative prior
+is the most suited option, and as $Beta(1,1)$ is a common prior used with binomial likelihood functions, I
+chose it for this problem.
+
+\subsection{Prior checks}
+\label{ssec:priorchecks}
+\todo[inline,captio?{}]{Perform posterior predictive checks.}
+
+\section{Results}
+\todo[inline,caption={}]{Include diagnostics to assess model convergence and adequacy.}
+
+\section{Discussion}
+\todo[inline,caption={}]{Discuss results, problems encountered, and possible improvements.}
+
+\appendix
+\section{R Code}
+\lstinputlisting[language=R,style=Rstyle,caption=Project R code,label=apx:RCode,]{./project.r}
+\end{document}
