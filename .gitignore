@@ -1,6 +1,5 @@
 Rplots.pdf
 exerciseTestCode.r
-*/latex_build
 Project/logs
 *test*
 .vscode
@@ -8,3 +7,5 @@ Project/logs
 *output
 .RData
 .Rhistory
+*/latex_build/*
+!*/latex_build/*.pdf
