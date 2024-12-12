@@ -4,9 +4,9 @@ Code related to the course MS2505 Bayesian Statistics at Blekinge Institute of T
 
 Additional course material can be found at the [course repo](https://github.com/avehtari/BDA_course_Aalto).
 
-## ExerciseCompilation folder
+## Export the compiled exercise pdf
 
-The folder contains a latex project with a compilation of all provided exercises during the course. If changes are made to the pdf file, run
+The `ExerciseCompilation` folder contains a latex project with a compilation of all provided exercises during the course, as well as the table of formulae and summary of main results. If changes are made to the pdf file, run
 
     bash ./export_exercise_pdf.sh [OUTPUT_FILE] [LATEX_DIR] [-h]
 
