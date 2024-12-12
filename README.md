@@ -8,7 +8,7 @@ Additional course material can be found at the [course repo](https://github.com/
 
 The folder contains a latex project with a compilation of all provided exercises during the course. If changes are made to the pdf file, run
 
-    bash ./ExerciseCompilation/pdfCombiner.sh [OUTPUT_FILE] [LATEX_DIR] [-h]
+    bash ./export_exercise_pdf.sh [OUTPUT_FILE] [LATEX_DIR] [-h]
 
 ### Argumens
 
