@@ -48,7 +48,7 @@ one sentence:
     \item Suppose a new genetic test can detect a rare mutation with 95\% sensitivity and 99\%
     specificity. The mutation occurs in 1/1000 of the population. A person tests positive for
     the mutation.
-    \begin{enumerate}[label=$(\alph*)$]
+    \begin{enumerate}[label=$\alph*)$]
         \item What is the prior probability that the person has the mutation?
         \item What is the likelihood of observing a positive test result given the person has
         the mutation?
@@ -60,7 +60,7 @@ one sentence:
     carry the genetic marker ($\theta$ = 1), and only 10\% of patients respond if they do not have
     the marker ($\theta$ = 0). Suppose 20\% of the population has the marker. A patient is given the
     drug and responds positively.
-    \begin{enumerate}[label=$(\alph*)$]
+    \begin{enumerate}[label=$\alph*)$]
         \item Write down the prior probabilities for $\theta$ = 1 and $\theta$ = 0.
         \item Derive the likelihood of the observed response for each possible $\theta$.
         \item Compute the posterior probability that the patient has the genetic
@@ -69,7 +69,7 @@ one sentence:
     based on their browsing behavior. Let $\theta$ denote the unknown probability that a visitor makes
     a purchase. Suppose the prior distribution of $\theta$ is $Beta(\alpha = 2, \beta = 3)$, and
     the retailer observes that 3 out of 10 visitors made purchases.
-    \begin{enumerate}[label=$(\alph*)$]
+    \begin{enumerate}[label=$\alph*)$]
         \item Derive the posterior distribution of $\theta$.
         \item What is the expected value of $\theta$ under the posterior distribution?
         \item If the retailer observes an additional 2 purchases from 5 new visitors, update the
@@ -78,7 +78,7 @@ one sentence:
     \item Suppose that if $\theta$ = 0, then $y$ follows a geometric distribution with success probability
     $p$ = 0.4, and if $\theta$ = 1, $y$ follows a negative binomial distribution with parameters $r$ = 2
     and $p$ = 0.3. Assume that $\Pr(\theta = 0) = 0.6$ and $\Pr(\theta = 1) = 0.4$.
-    \begin{enumerate}[label=$(\alph*)$]
+    \begin{enumerate}[label=$\alph*)$]
         \item Derive the formula for the marginal probability mass function of $y$.
         \item Given y = 3, calculate $\Pr(\theta = 1|y = 3)$.
     \end{enumerate}
@@ -86,13 +86,85 @@ one sentence:
     prior distribution of $\theta$ is $Beta(\alpha, \beta)$. Find the marginal distribution of $y$.
 \end{enumerate}
 
+\section{Repetition exercises 2}
+\begin{enumerate}
+    \item A diagnostic test has a sensitivity (true positive) of 98\% and a specificity (true negative)
+    of 95\%. The prevalence of the disease is 1 in 500. A person tests positive.
+    \begin{enumerate}[label=\alph*)]
+        \item Compute the prior probability that the person has the disease.
+        \item Find the probability of observing a positive test result if the person does not have
+        the disease.
+        \item Using Bayes' theorem, calculate the posterior probability that the person has the
+        disease given the positive test result.
+    \end{enumerate}
+    \item Suppose an online platform models the probability of users clicking on an ad. Let
+    the prior distribution of the click-through rate $\theta$ be $Beta(2, 2)$. After observing
+    8 clicks out of 20 impressions:
+    \begin{enumerate}
+        \item Derive the posterior distribution of $\theta$.
+        \item Compute the posterior mean of $\theta$.
+        \item Predict the probability of observing 5 clicks out of the next 10 impressions.
+    \end{enumerate}
+    \item Suppose $\theta$ has a prior $Beta(3, 5)$ and the observed data $y$ is modeled as 
+    $Binomial(n = 10, \theta)$.
+    \begin{enumerate}[label=\alph*)]
+        \item Derive the marginal distribution of $y$.
+        \item Compute the posterior distribution of $\theta$ if $y = 6$.
+        \item Calculate the posterior predictive probability of $y = 8$ in a new trial.
+    \end{enumerate}
+    \item Consider a normal distribution with known variance $\sigma^2 = 4$. Suppose
+    the prior distribution for the mean $\mu$ is $N(10, 9)$. After observing data
+    $y = [12, 14, 11]$:
+    \begin{enumerate}[label=\alph*)]
+        \item Derive the posterior distribution of $\mu$.
+        \item Compute the posterior predictive mean and variance of a new observation $\tilde{y}$.
+        \item Find the probability that $\tilde{y} > 15$.
+    \end{enumerate}
+    \item Mark is deciding whether to take the highway or a backroad on his trip to a nearby town.
+    He knows that the highway is usually faster, but sometimes it can be congested due to construction
+    or accidents. Mark observes that there is heavy traffic reported on the highway, and he needs to
+    determine if the congestion is a one-time event or if it will continue for the day. Based on the
+    prior information and the observed traffic delay, Mark applies Bayesian decision theory to decide
+    whether to take the highway or the backroad.
+    \begin{enumerate}[label=\alph*)]
+    \item Mark knows the following prior information:
+    \begin{itemize}
+        \item The prior probability of construction causing a delay on the highway is 10\%
+        (i.e., $P(Construction) = 0.1$).
+        \item  The probability of a delay being caused by an accident is therefore 90\%
+        (i.e., $P(Accident) = 0.9$).
+        \item The likelihood of observing the delay given that it is caused by construction
+        is 75\% (i.e., $P(Delay | Construction) = 0.75$).
+        \item The likelihood of observing the delay given that it is caused by an accident
+        is 25\% (i.e., $P(Delay | Accident) = 0.25$).
+    \end{itemize}
+    Given this, Mark uses Bayes’ Theorem to update his belief about the likelihood of
+    construction causing the delay. Derive the posterior probabilityof construction, given
+    the observed delay.
+    \item Mark has two choices:
+    \begin{itemize}
+        \item If Mark takes the backroad, the travel time is fixed at 60 minutes and the utility
+        is 0.
+        \item If Mark takes the highway:
+        \begin{itemize}
+            \item If there is construction (posterior probability 0.1), the delay is 45 minutes,
+            and the utility is $-30$.
+            \item If there is no construction (posterior probability 0.9), the travel time is
+            15 minutes, and the utility is 10.
+        \end{itemize}
+    \end{itemize}
+    Calculate the expected utility for both taking the highway and taking the backroad, and
+    determine the optimal decision for Mark.
+    \end{enumerate}
+\end{enumerate}
+
 \section{Old exam 2022-05-24}
 \begin{enumerate}
-    \item[1a] What are the differences between the Bayesian and classical methods?
-    \item[1b] Explain how to perform diagnostic analysis in Bayesian models.
-    \item[1c] What is a hierarchical model? Give an example of when this type of model is useful. What is the
+    \item[1a)] What are the differences between the Bayesian and classical methods?
+    \item[1b)] Explain how to perform diagnostic analysis in Bayesian models.
+    \item[1c)] What is a hierarchical model? Give an example of when this type of model is useful. What is the
     issue with the applicability of this type of model?
-    \item[1d] What is a prior? Give examples of different types of priors and talk about their strengths and
+    \item[1d)] What is a prior? Give examples of different types of priors and talk about their strengths and
     weaknesses.
     \item[2.] Lupus is an autoimmune disease, where antibodies attack plasma proteins instead of foreign cells.
     It is believed that 2\% of the population has this condition. Suppose that the exam to detect Lupus has 98\%
@@ -145,7 +217,7 @@ the exercise is at in the book.
     \item[1.1] Conditional probability: suppose that if $\theta = 1$, then $y$ has a normal distribution with mean
     1 and standard deviation $\alpha$, and if $\theta = 2$, then $y$ has a normal distribution with mean 2
     and standard deviation $\alpha$. Also, suppose $\Pr(\theta = 1) = 0.5$ and $\Pr(\theta = 2) = 0.5$\cite{Chapter1Exercises}.
-    \begin{enumerate}[label=$(\alph*)$]
+    \begin{enumerate}[label=$\alph*)$]
         \item For $\alpha = 2$, write the formula for the marginal probability density for $y$ and sketch it.
         \item What is $\Pr(\theta = 1|y = 1)$, again supposing $\alpha = 2$?
         \item Describe how the posterior density of $\theta$ changes in shape as $\alpha$ is increased and as it is
@@ -178,7 +250,7 @@ the exercise is at in the book.
     for $y$.
     \item[2.5] Posterior distribution as a compromise between prior information and data: let $y$ be the number of heads in n spins of a coin,
     whose probability of heads is $\theta$\cite{Chapter2Exercises}.
-    \begin{enumerate}[label=$(\alph*)$]
+    \begin{enumerate}[label=$\alph*)$]
         \item If your prior distribution for $\theta$ is uniform on the range [0, 1], derive your prior predictive distribution for $y$,
         \[
         \Pr(y = k) = \int_{0}^{1} \Pr(y = k|\theta) d\theta, k = 0, 1, . . . , n.
@@ -191,7 +263,7 @@ the exercise is at in the book.
     average weight of the $n$ sampled students is $y = 150$ pounds. Assume the weights in the population are
     normally distributed with unknown mean $\theta$ and known standard deviation 20 pounds. Suppose your prior
     distribution for $\theta$ is normal with mean 180 and standard deviation 40\cite{Chapter2Exercises}.
-    \begin{enumerate}[label=$(\alph*)$]
+    \begin{enumerate}[label=$\alph*)$]
         \item Give your posterior distribution for $\theta$. (Your answer will be a function of $n$.)
         \item A new student is sampled at random from the same population and has a weight of $\tilde{y}$ pounds.
         Give a posterior predictive distribution for $\tilde{y}$. (Your answer will still be a function of $n$.)
@@ -217,7 +289,7 @@ the exercise is at in the book.
     For a simple example, suppose we weigh an object five times and measure weights, rounded to the nearest pound, of 10, 10, 12, 11,
     9. Assume the unrounded measurements are normally distributed with a noninformative prior distribution on the mean $\mu$ and
     variance $\sigma^2$\cite{Chapter3Exercises}.
-    \begin{enumerate}[label=$(\alph*)$]
+    \begin{enumerate}[label=$\alph*)$]
         \item Give the posterior distribution for $(\mu, \sigma^2)$ obtained by pretending that the observations are exact unrounded
         measurements.
         \item Give the correct posterior distribution for $(\mu, \sigma^2)$ treating the measurements as rounded.
