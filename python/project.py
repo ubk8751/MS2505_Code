@@ -12,7 +12,7 @@ def gen_parser():
     # Dataset arguments
     parser.add_argument('--dirpath',
                         type=str,
-                        default='Project/data',
+                        default='data',
                         help='Path to the dataset directory.')
     parser.add_argument('--filename',
                         type=str,
@@ -215,7 +215,7 @@ def out_project(filename: str,
 
 if __name__ == '__main__':
     args = gen_parser()
-    log_dir = os.path.join(os.getcwd(), 'Project/logs')
+    log_dir = os.path.join(os.getcwd(), 'logs')
     if not os.path.exists(log_dir):
         os.mkdir(log_dir)
 
