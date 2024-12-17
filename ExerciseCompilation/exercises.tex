@@ -214,33 +214,33 @@ one sentence:
 The following exercises are from the MS2505 course book\cite{CourseBook}. Follow the cite in each question for the pages
 the exercise is at in the book.
 \begin{enumerate}
-    \item[1.1] Conditional probability: suppose that if $\theta = 1$, then $y$ has a normal distribution with mean
+    \item[1.1]\cite{Chapter1Exercises} Suppose that if $\theta = 1$, then $y$ has a normal distribution with mean
     1 and standard deviation $\alpha$, and if $\theta = 2$, then $y$ has a normal distribution with mean 2
-    and standard deviation $\alpha$. Also, suppose $\Pr(\theta = 1) = 0.5$ and $\Pr(\theta = 2) = 0.5$\cite{Chapter1Exercises}.
+    and standard deviation $\alpha$. Also, suppose $\Pr(\theta = 1) = 0.5$ and $\Pr(\theta = 2) = 0.5$.
     \begin{enumerate}[label=$\alph*)$]
         \item For $\alpha = 2$, write the formula for the marginal probability density for $y$ and sketch it.
         \item What is $\Pr(\theta = 1|y = 1)$, again supposing $\alpha = 2$?
         \item Describe how the posterior density of $\theta$ changes in shape as $\alpha$ is increased and as it is
         decreased.
     \end{enumerate}
-    \item[1.4] We will use the football dataset to estimate some conditional probabilities about professional football
-    games. There were twelve games with point spreads of 8 points; the outcomes in those games were: -7, -5, -3, -3,
-    1, 6, 7, 13, 15, 16, 20 and 21, with positive values indicating wins by the favorite and negative values indicating
-    wins by the underdog. Consider the following conditional probabilities\cite{Chapter1Exercises}:
+    \item[1.4]\cite{Chapter1Exercises} We will use the football dataset to estimate some conditional probabilities about professional
+    football games. There were twelve games with point spreads of 8 points; the outcomes in those games were: -7, -5, -3, -3, 1, 6, 7,
+    13, 15, 16, 20 and 21, with positive values indicating wins by the favorite and negative values indicating wins by the underdog.
+    Consider the following conditional probabilities:
     \begin{itemize}
         \item $\Pr(\text{favorite wins }|\text{ point spread }= 8)$,
         \item $\Pr(\text{favorite wins by at least }8\text{ }|\text{ point spread }= 8)$,
         \item $\Pr(\text{favorite wins by at least }8\text{ }| \text{ point spread } = 8\text{ and favorite wins})$.
     \end{itemize} 
-    \item[1.6] Approximately $\frac{1}{125}$ of all births are fraternal twins and $\frac{1}{300}$ of births are identical twins.
-    Elvis Presley had a twin brother (who died at birth). What is the probability that Elvis was an identical twin?
-    (You may approximate the probability of a boy or girl birth as $\frac{1}{2}$)\cite{Chapter1Exercises}.
-    \item[2.1] Suppose you have a $Beta(4, 4)$ prior distribution on the probability $\theta$ that a coin will yield a \textit{head} when
-    spun in a specified manner. The coin is independently spun ten times, and \textit{heads} appear fewer than 3 times. You are not
-    told how many heads were seen, only that the number is less than 3. Calculate your exact posterior density (up to a proportionality
-    constant) for $\theta$ and sketch it\cite{Chapter2Exercises}.
-    \item[2.4] Let $y$ be the number of 6's in $1000$ independent rolls of a particular real die, which may be unfair. Let $\theta$ be the
-    probability that the die lands on \textit{6}. Suppose your prior distribution for $\theta$ is as follows\cite{Chapter2Exercises}:
+    \item[1.6]\cite{Chapter1Exercises} Approximately $\frac{1}{125}$ of all births are fraternal twins and $\frac{1}{300}$ of births are
+    identical twins. Elvis Presley had a twin brother (who died at birth). What is the probability that Elvis was an identical twin?
+    (You may approximate the probability of a boy or girl birth as $\frac{1}{2}$).
+    \item[2.1]\cite{Chapter2Exercises} Suppose you have a $Beta(4, 4)$ prior distribution on the probability $\theta$ that a coin will yield
+    a \textit{head} when spun in a specified manner. The coin is independently spun ten times, and \textit{heads} appear fewer than 3 times.
+    You are not told how many heads were seen, only that the number is less than 3. Calculate your exact posterior density (up to a
+    proportionality constant) for $\theta$ and sketch it.
+    \item[2.4]\cite{Chapter2Exercises} Let $y$ be the number of 6's in $1000$ independent rolls of a particular real die, which may be unfair.
+    Let $\theta$ be the probability that the die lands on \textit{6}. Suppose your prior distribution for $\theta$ is as follows:
     \begin{itemize} 
         \item $\Pr(\theta = 1/12) = 0.25$,
         \item $\Pr(\theta = 1/6) = 0.5$,
@@ -248,8 +248,8 @@ the exercise is at in the book.
     \end{itemize}
     Using the normal approximation for the conditional distributions, $p(y|\theta)$, sketch your approximate prior predictive distribution
     for $y$.
-    \item[2.5] Posterior distribution as a compromise between prior information and data: let $y$ be the number of heads in n spins of a coin,
-    whose probability of heads is $\theta$\cite{Chapter2Exercises}.
+    \item[2.5]\cite{Chapter2Exercises} Posterior distribution as a compromise between prior information and data: let $y$ be the number of
+    heads in n spins of a coin, whose probability of heads is $\theta$.
     \begin{enumerate}[label=$\alph*)$]
         \item If your prior distribution for $\theta$ is uniform on the range [0, 1], derive your prior predictive distribution for $y$,
         \[
@@ -259,10 +259,10 @@ the exercise is at in the book.
         out of $n$ spins. Show algebraically that your posterior mean of $\theta$ always lies between your prior mean,
         $\frac{\alpha}{\alpha + \beta}$, and the observed relative frequency of heads, $\frac{y}{n}$.
     \end{enumerate}
-    \item[2.8] A random sample of $n$ students is drawn from a large population, and their weights are measured. The
-    average weight of the $n$ sampled students is $y = 150$ pounds. Assume the weights in the population are
-    normally distributed with unknown mean $\theta$ and known standard deviation 20 pounds. Suppose your prior
-    distribution for $\theta$ is normal with mean 180 and standard deviation 40\cite{Chapter2Exercises}.
+    \item[2.8]\cite{Chapter2Exercises} A random sample of $n$ students is drawn from a large population, and their weights are measured.
+    The average weight of the $n$ sampled students is $y = 150$ pounds. Assume the weights in the population are normally distributed with
+    unknown mean $\theta$ and known standard deviation 20 pounds. Suppose your prior distribution for $\theta$ is normal with mean 180 and
+    standard deviation 40.
     \begin{enumerate}[label=$\alph*)$]
         \item Give your posterior distribution for $\theta$. (Your answer will be a function of $n$.)
         \item A new student is sampled at random from the same population and has a weight of $\tilde{y}$ pounds.
@@ -271,52 +271,52 @@ the exercise is at in the book.
         for $\tilde{y}$.
         \item Do the same for $n = 100$.
     \end{enumerate}
-    \item[2.16] Suppose y has a binomial distribution for a given $n$ and unknown parameter $\theta$, where the prior
-    distribution of $\theta$ is $Beta(\alpha, \beta)$. Find $p(y)$, the marginal distribution of $y$, for $y = 0,
-    \dots, n$ (unconditional on $\theta$). This discrete distribution is known as the beta-binomial, for obvious
-    reasons\cite{Chapter2Exercises}.
-    \item[3.3] An experiment was performed on the effects of magnetic fields on the flow of calcium out of chicken brains.
-    Two groups of chickens were involved: a control group of 32 chickens and an exposed group of 36 chickens. One measurement
-    was taken on each chicken, and the purpose of the experiment was to measure the average flow $\mu_c$ in untreated (control)
-    chickens and the average flow µt in treated chickens. The 32 measurements on the control group had a sample mean of $1.013$
-    and a sample standard deviation of $0.24$. The 36 measurements on the treatment group had a sample mean of $1.173$ and a
-    sample standard deviation of $0.20$.
+    \item[2.16]\cite{Chapter2Exercises} Suppose y has a binomial distribution for a given $n$ and unknown parameter $\theta$, where the prior
+    distribution of $\theta$ is $Beta(\alpha, \beta)$. Find $p(y)$, the marginal distribution of $y$, for $y = 0, \dots, n$ (unconditional on
+    $\theta$). This discrete distribution is known as the beta-binomial, for obvious reasons.
+    \item[3.3]\cite{Chapter3Exercises} An experiment was performed on the effects of magnetic fields on the flow of calcium out of chicken
+    brains. Two groups of chickens were involved: a control group of 32 chickens and an exposed group of 36 chickens. One measurement was taken
+    on each chicken, and the purpose of the experiment was to measure the average flow $\mu_c$ in untreated (control) chickens and the average
+    flow µt in treated chickens. The 32 measurements on the control group had a sample mean of $1.013$ and a sample standard deviation of $0.24$.
+    The 36 measurements on the treatment group had a sample mean of $1.173$ and a sample standard deviation of $0.20$.
 
     Assuming the control measurements were taken at random from a normal distribution with mean $\mu_c$ and variance $\sigma^{2}_{c}$,
     what is the posterior distribution of $\mu_c$? Similarly, use the treatment group measurements to determine the marginal posterior
-    distribution of $\mu_t$. Assume a uniform prior distribution on ($\mu_c$, $\mu_t$, $\log(\sigma_c)$, $\log(\sigma_t)$)\cite{Chapter3Exercises}.
-    \item[3.5] Rounded data: it is a common problem for measurements to be observed in rounded form (for a review, see Heitjan, 1989).
-    For a simple example, suppose we weigh an object five times and measure weights, rounded to the nearest pound, of 10, 10, 12, 11,
-    9. Assume the unrounded measurements are normally distributed with a noninformative prior distribution on the mean $\mu$ and
-    variance $\sigma^2$\cite{Chapter3Exercises}.
+    distribution of $\mu_t$. Assume a uniform prior distribution on ($\mu_c$, $\mu_t$, $\log(\sigma_c)$, $\log(\sigma_t)$).
+    \item[3.5]\cite{Chapter3Exercises} Rounded data: it is a common problem for measurements to be observed in rounded form (for a review, see
+    Heitjan, 1989). For a simple example, suppose we weigh an object five times and measure weights, rounded to the nearest pound, of 10, 10,
+    12, 11, 9. Assume the unrounded measurements are normally distributed with a noninformative prior distribution on the mean $\mu$ and
+    variance $\sigma^2$.
     \begin{enumerate}[label=$\alph*)$]
         \item Give the posterior distribution for $(\mu, \sigma^2)$ obtained by pretending that the observations are exact unrounded
         measurements.
         \item Give the correct posterior distribution for $(\mu, \sigma^2)$ treating the measurements as rounded.
     \end{enumerate}
-    \item[3.9] Suppose $y$ is an independent and identically distributed sample of size $n$ from the distribution $N(\mu, \sigma^2)$, where the
-    prior distribution for $(\mu, \sigma^2)$ is $N-Inv-\chi^2(\mu, \sigma^2|\mu_0, \frac{\sigma^2_0}{\kappa_0}; v_0, \sigma^{2}_{0})$; that is,
-    $\sigma^2 ~ Inv-\chi^2(v_0, \sigma^2_0)$ and $\mu|\sigma^2 ~ N(\mu_0, \sigma^2/\kappa_ 0)$. The posterior distribution, $p(\mu, \sigma^2|y)$,
-    is also normal-inverse-$\chi^2$; derive explicitly its parameters in terms of the prior parameters and the sufficient statistics of the
-    data\cite{Chapter3Exercises}.
-    \item[4.2] Derive the analytic form of the information matrix and the normal approximation variance for the bioassay
-    example\cite{BioassayExample}\cite{Chapter4Exercises}.
-    \item[4.4] Asymptotic normality: assuming the regularity conditions hold, we know that $p(\theta|y)$ approaches normality as $n \rightarrow \infty$.
-    In addition, if $\Phi = f(\theta)$ is any one-to-one continuous transformation of $\theta$, we can express the Bayesian inference in terms of
-    $\Phi$ and find that $p(\Phi|y)$ also approaches normality. But a nonlinear transformation of a normal distribution is no longer normal. How
-    can both limiting normal distributions be valid\cite{Chapter4Exercises}?
-    \item[4.13] Discuss the criticism, "Bayesianism assumes: (a) Either a weak or uniform prior [distribution], in which case why bother?, (b) Or a
-    strong prior [distribution], in which case why collect new data?, (c) Or more realistically, something in between, in which case Bayesianism
-    always seems to duck the issue" (Ehrenberg, 1986). Feel free to use any of the examples covered so far to illustrate your points.
-    \item[5.4] Exchangeable prior distributions: suppose it is known a priori that the 2J parameters $\theta_1,\dots, \theta_{2J}$ are clustered
-    into two groups, with exactly half being drawn from a $N(1, 1)$ distribution, and the other half being drawn from a $N(-1, 1)$ distribution,
-    but we have not observed which parameters come from which distribution.
+    \item[3.9]\cite{Chapter3Exercises} Suppose $y$ is an independent and identically distributed sample of size $n$ from the distribution
+    $N(\mu, \sigma^2)$, where the prior distribution for $(\mu, \sigma^2)$ is\\$N-Inv-\chi^2(\mu, \sigma^2|\mu_0, \frac{\sigma^2_0}{\kappa_0}; v_0,
+    \sigma^{2}_{0})$; that is, $\sigma^2 ~ Inv-\chi^2(v_0, \sigma^2_0)$ and $\mu|\sigma^2 ~ N(\mu_0, \sigma^2/\kappa_ 0)$. The posterior distribution,
+    $p(\mu, \sigma^2|y)$, is also normal-inverse-$\chi^2$; derive explicitly its parameters in terms of the prior parameters and the sufficient
+    statistics of the data.
+    \item[4.2]\cite{Chapter4Exercises} Derive the analytic form of the information matrix and the normal approximation variance for the bioassay
+    example\cite{BioassayExample}.
+    \item[4.4]\cite{Chapter4Exercises} Asymptotic normality: assuming the regularity conditions hold, we know that $p(\theta|y)$ approaches normality
+    as $n \rightarrow \infty$. In addition, if $\Phi = f(\theta)$ is any one-to-one continuous transformation of $\theta$, we can express the Bayesian
+    inference in terms of $\Phi$ and find that $p(\Phi|y)$ also approaches normality. But a nonlinear transformation of a normal distribution is no
+    longer normal. How can both limiting normal distributions be valid?
+    \item[4.13]\cite{Chapter4Exercises} Discuss the criticism, "Bayesianism assumes: (a) Either a weak or uniform prior [distribution], in which case
+    why bother?, (b) Or a strong prior [distribution], in which case why collect new data?, (c) Or more realistically, something in between, in which
+    case Bayesianism always seems to duck the issue" (Ehrenberg, 1986). Feel free to use any of the examples covered so far to illustrate your points.
+    \item[5.4]\cite{Chapter5Exercises} Exchangeable prior distributions: suppose it is known a priori that the 2J parameters $\theta_1,\dots, \theta_{2J}$
+    are clustered into two groups, with exactly half being drawn from a $N(1, 1)$ distribution, and the other half being drawn from a $N(-1, 1)$
+    distribution, but we have not observed which parameters come from which distribution.
     
     Are $\theta_1,\dots, \theta_{2J}$ exchangeable under this prior distribution?
-    \item[5.7] If $y|\theta ~ Poisson(\theta)$, and $\theta ~ Gamma(\alpha, \beta)$, then the marginal (prior predictive) distribution of $y$ is
-    negative binomial with parameters $\alpha$ and $\beta$ (or $p = \beta/(1 + \beta)$). Use the formulas (2.7)\footnote{$E(\theta) = E(E(\theta|y))$}
-    and (2.8)\footnote{$var(\theta) = E(var(\theta|y)) + var(E(\theta|y))$} to derive the mean and variance of the negative binomial.
-    \item[5.11] Suppose that in the rat tumor example, we wish to use a normal population distribution on the log-odds scale:
+    \item[5.7]\cite{Chapter5Exercises} If $y|\theta ~ Poisson(\theta)$, and $\theta ~ Gamma(\alpha, \beta)$, then the marginal (prior predictive)
+    distribution of $y$ is negative binomial with parameters $\alpha$ and $\beta$ (or $p = \beta/(1 + \beta)$). Use the formulas (2.7)\footnote{$E
+    (\theta) = E (E (\theta|y))$}
+    and (2.8)\footnote{$var(\theta) = E (var (\theta|y)) + var (E (\theta|y))$} to derive the mean and variance of the negative binomial.
+    \item[5.11]\cite{Chapter5Exercises} Suppose that in the rat tumor example, we wish to use a normal population distribution on the log-odds
+    scale:
     \[
     logit(\theta_j ) ~ N(\mu, \tau^2),for j = 1,\dots, J.
     \]
