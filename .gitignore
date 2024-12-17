@@ -7,5 +7,6 @@ Project/logs
 *output
 .RData
 .Rhistory
-*/latex_build/*
-!*/latex_build/*.pdf
+*latex_build*
+!*latex_build*.pdf
+logs
