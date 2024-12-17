@@ -1,11 +1,11 @@
 Rplots.pdf
 exerciseTestCode.r
-Project/logs
+logs
 *test*
 .vscode
 *__pycache__
 *output
 .RData
 .Rhistory
-*/latex_build/*
-!*/latex_build/*.pdf
+*latex_build*
+!*latex_build*.pdf
