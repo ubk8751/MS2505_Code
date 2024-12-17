@@ -9,3 +9,4 @@ logs
 .Rhistory
 *latex_build*
 !*latex_build*.pdf
+logs
