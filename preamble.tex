@@ -7,6 +7,8 @@
 \usepackage{changepage}             % Allows adjustment of page layout parameters
 \usepackage{ftnxtra}                % Allows for fancy footnotes
 \usepackage{fancyhdr}               % Allows for headers and footers
+\setlength{\headheight}{14.49998pt}
+\addtolength{\topmargin}{-2.49998pt}
 \usepackage{subcaption}             % Enhanced support for sub-figures and sub-captions
 \usepackage{wrapfig}
 
@@ -46,7 +48,7 @@
     comment=[l]{\#},
     commentstyle=\color{green!50!black},
     stringstyle=\color{orange},
-    morestring=[b]",
+    morestring=[b]'',
     morestring=[b]',
     moredelim=[is][\color{purple}]{`}{`}
 }
@@ -66,9 +68,10 @@
 
 % Graphic packages
 \usepackage{graphicx}               % Graphics support
-\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage[a4paper, margin=1in]{geometry}
 \usepackage{tikz}                   % For in-doc drawings
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 % Maths packages
 \usepackage{amsmath}                % Math support
@@ -111,14 +114,14 @@
 
 \usepackage{hyperref}               % Hyperlinks
 \usepackage{url}                    % For typesetting URLs with line breaks at hyphens
-\def\UrlBreaks{\do\/\do-}           % Allows urls to break lines
+\def\UrlBreaks{\do\/\do-}           % Allows urls to break lines chktex 4
 \hypersetup{breaklinks=true}
 \urlstyle{same}
 \usepackage{nameref}                % Enables referencing section names instead of numbers
 
 % For using TODO notes
 % \todo[inline,caption={}]{TODOs are to be inserted like this}
-\usepackage[color=blue!10,textsize=footnotesize,textwidth=25mm]{todonotes}
+%\usepackage[color=blue!10,textsize=footnotesize,textwidth=25mm]{todonotes}
 %\usepackage[disable]{todonotes}
 \usepackage{float}
 
@@ -146,8 +149,6 @@
                      labelsep=newline,
                      skip=0pt}
 
-
-
 \makeatletter
 % Commands to format a counter value as Greek letter to be used like 
 % \arabic or \roman when using enumerate:
@@ -168,7 +169,7 @@
 % AUTHOR
 \newcommand{\authorname}{Samuel Jonsson}
 \newcommand{\authormail}{\href{mailto:sajs19@student.bth.se}{sajs19@student.bth.se}}
-\newcommand{\authorpersonnr}{19990415-5596}
+\newcommand{\authorpersonnr}{19990415-5596} % chktex 8
 \newcommand{\program}{DVAMI19h}
 
 % REPORT METADATA
