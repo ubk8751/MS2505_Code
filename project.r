@@ -121,7 +121,7 @@ ggplot(data = data.frame(samples = beta_samples), aes(x = samples)) +
   geom_density(fill = "lightblue", alpha = 0.7) +
   geom_vline(xintercept = beta_mean, color = "red", linetype = "dashed") +
   geom_vline(xintercept = beta_ci, color = "blue", linetype = "dotted") +
-  labs(title = "Beta Posterior Density", x = "Probability", y = "Density") +
+  labs(title = "Monte Carlo Sampling Posterior Density", x = "Theta", y = "") +
   theme_minimal()
 dev.off()
 
@@ -131,15 +131,15 @@ ggplot(data = data.frame(samples = mcmc_samples), aes(x = samples)) +
   geom_density(fill = "lightblue", alpha = 0.7) +
   geom_vline(xintercept = mcmc_mean, color = "red", linetype = "dashed") +
   geom_vline(xintercept = mcmc_ci, color = "blue", linetype = "dotted") +
-  labs(title = "MCMC Posterior Density", x = "Probability", y = "Density") +
+  labs(title = "MCMC Sampling Posterior Density", x = "Theta", y = "") +
   theme_minimal()
 dev.off()
 
 # 3. Beta Posterior Histogram
 pdf("figures/beta_posterior_histogram.pdf")
 hist(beta_samples,
-  breaks = 30, col = "lightgreen", border = "black",
-  xlab = "Probability", main = "Beta Posterior Histogram"
+  breaks = 30, col = "lightblue", border = "black",
+  xlab = "Theta", main = "Monte Carlo Posterior Histogram"
 )
 dev.off()
 
@@ -147,7 +147,7 @@ dev.off()
 pdf("figures/mcmc_posterior_histogram.pdf")
 hist(mcmc_samples,
   breaks = 30, col = "lightblue", border = "black",
-  xlab = "Probability", main = "MCMC Posterior Histogram"
+  xlab = "Theta", main = "MCMC Posterior Histogram"
 )
 dev.off()
 
